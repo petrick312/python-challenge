@@ -33,7 +33,6 @@ with open(election_csv) as csv_file:
             cand_votes_perc[key] =round((value/vote_total)* 100 , 3)
         
         #the winner of the election based on popular vote - look for max count of votes and store candidate name
-        #winner = max(cand_votes, key=lambda key: cand_votes[key])
         winner = max(cand_votes, key=cand_votes.get)
     
 #display the results
