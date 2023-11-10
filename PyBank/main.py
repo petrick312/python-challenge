@@ -57,8 +57,8 @@ print(f'----------------------------\n')
 print(f'Total Months: {total_months}\n')
 print(f'Total: ${net_total}\n')
 print(f'Average Change: ${average}\n')
-print(f'Greatest Increase in Profits: {inc_date} ${inc_amt}\n')
-print(f'Greatest Decrease in Profits: {dec_date} ${dec_amt}\n')
+print(f'Greatest Increase in Profits: {inc_date} (${inc_amt})\n')
+print(f'Greatest Decrease in Profits: {dec_date} $({dec_amt})\n')
 
 #specify the path and file to write to
 output_path = os.path.join("analysis", "Financial_Analysis.txt")
@@ -70,5 +70,5 @@ with open(output_path,'w', newline='') as text:
     text.write(f'Total Months: {total_months}\n\n')
     text.write(f'Total: ${net_total}\n\n')
     text.write(f'Average Change: ${average}\n\n')
-    text.write(f'Greatest Increase in Profits: {inc_date} ${inc_amt}\n\n')
-    text.write(f'Greatest Decrease in Profits: {dec_date} ${dec_amt}\n\n')
+    text.write(f'Greatest Increase in Profits: {inc_date} (${inc_amt})\n\n')
+    text.write(f'Greatest Decrease in Profits: {dec_date} (${dec_amt})\n\n')

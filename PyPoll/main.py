@@ -33,7 +33,6 @@ with open(election_csv) as csv_file:
             cand_votes_perc[key] =round((value/vote_total)* 100 , 3)
         
         #the winner of the election based on popular vote - look for max count of votes and store candidate name
-        #winner = max(cand_votes, key=lambda key: cand_votes[key])
         winner = max(cand_votes, key=cand_votes.get)
     
 #display the results
@@ -52,12 +51,12 @@ output_path = os.path.join("analysis", "Election_Results.txt")
         
 #open and write results to text file
 with open(output_path,'w', newline='') as text:
-    text.write(f'Election Results\n')
-    text.write(f'-------------------------\n')
-    text.write(f'Total Votes: {vote_total}\n')
-    text.write(f'-------------------------\n')
+    text.write(f'Election Results\n\n')
+    text.write(f'-------------------------\n\n')
+    text.write(f'Total Votes: {vote_total}\n\n')
+    text.write(f'-------------------------\n\n')
     for key, value in cand_votes.items():
-        text.write(f'{key}: {str(cand_votes_perc[key])}% ({cand_votes[key]})\n')
-    text.write(f'-------------------------\n')
-    text.write(f'Winner: {winner}\n')
-    text.write(f'-------------------------\n')
+        text.write(f'{key}: {str(cand_votes_perc[key])}% ({cand_votes[key]})\n\n')
+    text.write(f'-------------------------\n\n')
+    text.write(f'Winner: {winner}\n\n')
+    text.write(f'-------------------------\n\n')
